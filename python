@@ -1,0 +1,45 @@
+""" Riley is analyzing DNA sequences and needs to determine which bases match at the same positions in two given DNA sequences. Each DNA sequence is represented as a tuple of integers, where each integer corresponds to a DNA base. 
+
+
+
+Your task is to write a program that compares these two sequences and identifies the bases that match at the same positions and print it.
+
+Input format :
+The first line of input consists of an integer n, representing the size of the first tuple.
+
+The second line contains n space-separated integers, representing the elements of the first DNA sequence tuple.
+
+The third line of input consists of an integer m, representing the size of the second tuple.
+
+The fourth line contains m space-separated integers, representing the elements of the second DNA sequence tuple.
+
+Output format :
+The output is a space-separated integer of the matching bases at the same positions in both sequences.
+
+"""
+
+# Read the size of the first tuple
+size1 = int(input().strip())
+# Read the first tuple
+dna1 = tuple(map(int, input().strip().split()))
+
+# Read the size of the second tuple
+size2 = int(input().strip())
+# Read the second tuple
+dna2 = tuple(map(int, input().strip().split()))
+
+# Initialize a list for matching bases
+matching_bases = []
+
+# Check if both tuples are of the same size
+if size1 == size2:
+    # Iterate over the tuples and compare
+    for i in range(size1):
+        if dna1[i] == dna2[i]:
+            matching_bases.append(dna1[i])
+
+# Print the result
+if len(matching_bases) == 1:
+    print(matching_bases[0])
+elif len(matching_bases) > 1:
+    print(' '.join(map(str, matching_bases)))
